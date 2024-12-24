@@ -4,7 +4,19 @@
 using namespace std;
 
 int main() {
-    vector<int> numbers = { 3, 5, 7, 2, 8, -1, 4 };
+    vector<int> numbers;
+
+    int number;
+    char choice;
+
+    do {
+        cout << "Введите целое число: ";
+        cin >> number;
+        numbers.push_back(number);
+
+        cout << "Хотите ввести еще одно число? (y/n): ";
+        cin >> choice;
+    } while (choice == 'y');
 
     if (!numbers.empty()) {
         int maxNumber = *max_element(numbers.begin(), numbers.end());
